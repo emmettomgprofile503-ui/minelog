@@ -3,7 +3,7 @@
     "header": {
         "name": "Minelog Waypoints",
         "description": "Save your exact position with a label using /wp: commands. Export the log as JSON to import into Minelog.",
-        "uuid": "15584113-6ebb-4e53-b4f6-4fc0d310c1f0",
+        "uuid": "7f3c2e91-6a84-4d52-bf17-9c6e3a82d145",
         "version": [1, 0, 3],
         "min_engine_version": [1, 21, 80]
     },
