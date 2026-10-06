@@ -241,6 +241,10 @@ function clearCommand(player, confirm) {
 }
 
 /** @param {import("@minecraft/server").Player} player */
+/** @param {import("@minecraft/server").Player} player */
+function lobbyCommand(player) {
+    player.teleport({ x: 0, y: -58, z: 0 });
+}
 function helpCommand(player) {
     player.sendMessage("§a§lMinelog commands:");
     player.sendMessage('§f/wp:save "<label>" §7— save your current position');
@@ -328,7 +332,14 @@ system.beforeEvents.startup.subscribe(({ customCommandRegistry }) => {
     customCommandRegistry.registerCommand(
         {
             ...base,
-            name: "wp:help",
+            name: "wp:help",    customCommandRegistry.registerCommand(
+        {
+            ...base,
+            name: "lobby",
+            description: "Teleport to the lobby",
+        },
+        playerCommand(lobbyCommand)
+    );
             description: "Show Minelog command usage",
         },
         playerCommand(helpCommand)
